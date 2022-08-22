@@ -19,3 +19,7 @@
 #else
 	#define VIN_SOFT_ASSERT(x, msg) 
 #endif
+
+#define VIN_ASSERT_NOMSG(x) VIN_ASSERT(x, "")
+#define VIN_HARD_ASSERT_NOMSG(x) VIN_HARD_ASSERT(x, "")
+#define VIN_SOFT_ASSERT_NOMSG(x) VIN_SOFT_ASSERT(x, "")
