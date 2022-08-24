@@ -12,17 +12,17 @@ namespace Vin {
 	class VinDefaultAllocator {
 	public:
 		static void* Alloc(size_t size) {
-			AllocAligned(size, VIN_DEFAULT_MEMORY_ALIGNEMENT);
+			return AllocAligned(size, VIN_DEFAULT_MEMORY_ALIGNEMENT);
 		}
 		static void* AllocAligned(size_t size, size_t alignement);
 		
 		static void Free(void* ptr) {
-			FreeAligned(ptr, VIN_DEFAULT_MEMORY_ALIGNEMENT);
+			return FreeAligned(ptr, VIN_DEFAULT_MEMORY_ALIGNEMENT);
 		}
 		static void FreeAligned(void* ptr, size_t alignement);
 
 		static void* Realloc(void* ptr, size_t size) {
-			ReallocAligned(ptr, size, VIN_DEFAULT_MEMORY_ALIGNEMENT);
+			return ReallocAligned(ptr, size, VIN_DEFAULT_MEMORY_ALIGNEMENT);
 		}
 		static void* ReallocAligned(void* ptr, size_t size, size_t alignement);
 	};
