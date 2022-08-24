@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.2)
 project(vin-base CXX)
 
 
-set(EXTERNAL_PATH ${CMAKE_SOURCE_DIR}/3rdparty)
+set(EXTERNAL_PATH ./3rdparty)
 
 add_subdirectory(${EXTERNAL_PATH}/mimalloc)
 
