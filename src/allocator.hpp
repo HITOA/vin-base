@@ -71,4 +71,14 @@ namespace Vin {
 	T* ReallocAligned(T* ptr, size_t n, size_t alignement) {
 		return (T*)VIN_ALLOCATOR::ReallocAligned(ptr, sizeof(T) * n, alignement);
 	}
+
+	template<typename T, typename... Args>
+	void Construct(T* ptr, Args... args) {
+		new(ptr) T{ args... };
+	}
+
+	template<typename T>
+	void Deconstruct(T* ptr) {
+		T->~T();
+	}
 }
